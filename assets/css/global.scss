@@ -1,0 +1,129 @@
+.el-button{
+  margin:0px;
+  border-radius:5px;
+}
+
+.row{
+  display:flex;
+  gap:20px;
+}
+
+.between{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.column{
+  height:100%;
+  display:flex;
+  flex-direction: column;
+}
+
+.subHeader{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  height:80px;
+
+  .title{
+    display:flex;
+    h2{
+      font-size:24px;
+      font-weight:600;
+      margin-right:15px;
+    }
+    p{
+      margin-top:10px;
+      color:#797979;
+    }
+  }
+}
+
+.box{
+  background:#fff;
+  border-radius:15px;
+  padding:24px;
+  margin-bottom:20px;
+  border:1px solid #eaeaea;
+  box-shadow: 3px 3px 15px rgba(0,0,0,0.03), 1px 1px 2px rgba(0,0,0,0.01);
+
+  .box_head{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom:20px;
+    .title{
+      h4{
+        font-size:20px;
+        font-weight:500;
+        transform: rotate(0.02deg);
+      }
+      p{
+        font-size:14px;
+        margin-top:8px;
+        color:#797979;
+      }
+    }
+    
+  }
+
+  &::-webkit-scrollbar{
+    width:5px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #e2e2e2;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #1E5DEF;
+    border-radius:5px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #1F54D1;
+  }
+}
+
+.list{
+  overflow-y:auto;
+
+  &::-webkit-scrollbar{
+    width:5px;
+    scroll-behavior: smooth;
+  }
+  &::-webkit-scrollbar-track {
+    background: #e2e2e2;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #1E5DEF;
+    border-radius:5px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #1F54D1;
+  }
+}
+
+
+.el-radio-button__original-radio:checked+.el-radio-button__inner{
+  background:#1E5DEF;
+  border-color:#1E5DEF;
+}
+
+.el-radio__input.is-checked .el-radio__inner{
+  background:#1E5DEF;
+  border-color:#1E5DEF;
+}
+
+.el-dialog{
+  --el-dialog-width:unset;
+  border-radius:10px;
+  .el-dialog__header{
+    display:none;
+  }
+  .el-dialog__body{
+    padding:0;
+  }
+}
+
+.el-radio-button__inner{
+  width:100%;
+}
