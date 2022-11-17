@@ -59,10 +59,27 @@
               <span>토요일</span>
             </div>
 
-            <el-divider></el-divider>
+            <div class="day_detail">
+              <dl class="between">
+                <dt>스마트페이</dt>
+                <dd>145,500원</dd>
+              </dl>
+              <dl class="between">
+                <dt>키오스크-카드</dt>
+                <dd>98,500원</dd>
+              </dl>
+              <dl class="between">
+                <dt>키오스크-지폐</dt>
+                <dd>56,500원</dd>
+              </dl>
+              <dl class="between">
+                <dt>동전매출</dt>
+                <dd>13,500원</dd>
+              </dl>
+            </div>
 
             <div class="list">
-              <dl>
+              <dl v-for="item in 10" :key="item">
                 <dt>15시</dt>
                 <dd>
                   <div class="item">
@@ -283,17 +300,16 @@ watch(count, value => {
 
 
 .history_list{
-  max-height:calc(100vh - 200px);
-  min-height:calc(100vh - 200px);
-  overflow-y:auto;
-
-  .list{
-    display:flex;
-    flex-direction: column;
-    gap:40px;
-  }
+  padding:0;
+  max-height:calc(100vh);
+    min-height:calc(100vh);
+    overflow-y:auto;
 
   .day_text{
+    padding:20px;
+    position: sticky;
+    top:0px;
+    background:#fff;
     strong{
       font-size:32px;
       font-weight:600;
@@ -304,87 +320,116 @@ watch(count, value => {
     }
   }
 
+  .day_detail{
+    margin-top:15px;
+    padding:0 20px 20px 20px;
+    display:flex;
+    flex-direction: column;
+    gap:8px;
 
-  dl{
-    dt{
-      margin-bottom:15px;
-      font-weight:600;
-      font-size:18px;
-    }
-    dd{
-      display:flex;
-      flex-direction: column;
-      gap:10px;
-    }
-  }
-  .item{
-    border:1px solid #e2e2e2;
-    border-radius:8px;
-    min-height:90px;
-    padding:15px;
-    background:#fff;
-
-    .top{
-      margin-bottom:15px;
-
-      .icons{
-        display:flex;
-        align-items: center;
-        gap:5px;
-        label{
-          display:flex;
-          align-items: center;
-          font-size:12px;
-          padding:0 5px;
-          height:20px;
-          background:#292929;
-          color:#fff;
-          border-radius:3px;
-        }
-        .cate{
-          .order{
-            background:#E61245;
-          }
-          .chage{
-            background:#1E5DEF;
-          }
-        }
-      }
-      .date{
+    dl{
+      dt{
         font-size:14px;
         color:#797979;
       }
-    }
-    .middle{
-      .info{
-        .title{
-          font-weight:500;
-        }
-        .user{
-          font-size:14px;
-          color:#797979;
-          margin-top:3px;
-        }
-      }
-      .price{
-        font-size:18px;
-        font-weight:600;
-      }
-    }
-    .bottom{
-      display:flex;
-      flex-direction: column;
-      gap:5px;
-      background:#f2f2f2;
-      padding:10px;
-      border-radius:5px;
-      font-size:14px;
-      margin-top:10px;
-
-      span{
-        color:#797979;
+      dd{
+        font-weight:500;
+        font-size:14px;
       }
     }
   }
+
+  .list{
+    border-top:1px solid #e2e2e2;
+    display:flex;
+    flex-direction: column;
+    gap:40px;
+    padding:20px 20px;
+    
+
+    dl{
+      dt{
+        margin-bottom:15px;
+        font-weight:600;
+        font-size:18px;
+      }
+      dd{
+        display:flex;
+        flex-direction: column;
+        gap:10px;
+      }
+    }
+    .item{
+      border:1px solid #e2e2e2;
+      border-radius:8px;
+      min-height:90px;
+      padding:15px;
+      background:#fff;
+
+      .top{
+        margin-bottom:15px;
+
+        .icons{
+          display:flex;
+          align-items: center;
+          gap:5px;
+          label{
+            display:flex;
+            align-items: center;
+            font-size:12px;
+            padding:0 5px;
+            height:20px;
+            background:#292929;
+            color:#fff;
+            border-radius:3px;
+          }
+          .cate{
+            .order{
+              background:#E61245;
+            }
+            .chage{
+              background:#1E5DEF;
+            }
+          }
+        }
+        .date{
+          font-size:14px;
+          color:#797979;
+        }
+      }
+      .middle{
+        .info{
+          .title{
+            font-weight:500;
+          }
+          .user{
+            font-size:14px;
+            color:#797979;
+            margin-top:3px;
+          }
+        }
+        .price{
+          font-size:18px;
+          font-weight:600;
+        }
+      }
+      .bottom{
+        display:flex;
+        flex-direction: column;
+        gap:5px;
+        background:#f2f2f2;
+        padding:10px;
+        border-radius:5px;
+        font-size:14px;
+        margin-top:10px;
+
+        span{
+          color:#797979;
+        }
+      }
+    }
+
+  }
+ 
 }
 </style>
