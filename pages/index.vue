@@ -115,16 +115,16 @@
           <dl class="notice">
             <dt>공지사항</dt>
             <dd>
-              <div class="item new">                 
+              <div class="item new" @click="noticeVislble = true">                 
                 <strong>키오스크 에러 관련 추가공지 </strong>
                 <span>2022.10.10</span>
                 
               </div>
-              <div class="item">      
+              <div class="item" @click="noticeVislble = true">      
                 <strong>키오스크 알림톡 발송시 매장 공지사항 업데이트 안내 공지사항 업데이트 안내</strong>
                 <span>2022.08.10</span>
               </div>
-              <div class="item">
+              <div class="item" @click="noticeVislble = true">
                 <strong>페이오티 간편결제 서비스 업데이트</strong>
                 <span>2022.08.09</span>
               </div>
@@ -159,12 +159,15 @@
         </div>
       </el-col>
     </el-row>
+
+    <modalNotice v-model="noticeVislble" />
   </div> <!-- contents -->
 </template>
 
 <script lang="ts" setup>
 import { TChartData } from "vue-chartjs/dist/types"
 
+const noticeVislble = ref(false)
 
 const chartData: TChartData<'bar', number[], unknown> = {
   labels: [

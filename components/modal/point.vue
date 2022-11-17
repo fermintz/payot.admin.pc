@@ -1,5 +1,5 @@
 <template>
-  <el-dialog v-model="show" custom-class="remoteDialog" :show-close="false" :width="450">
+  <el-dialog v-model="show" custom-class="dialog" :show-close="false" :width="450">
     <div class="head">
       <h2>
         010-8525-4561님 
@@ -84,7 +84,7 @@ const openBox = ()=>{
 
 <style lang="scss" scoped>
 
-.remoteDialog{
+.dialog{
   .head{
     display:flex;
     flex-direction: column;
